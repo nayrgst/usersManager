@@ -1,7 +1,13 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
+
+html,
+body,
+:root {
+  height: 100%;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -111,7 +117,6 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.645 0.246 16.439);
 }
-
 
 @layer base {
   * {
