@@ -2,7 +2,7 @@
 
 import { z } from 'zod';
 
-import { loginSchema } from '@/schemas/loginSchema';
+import { loginSchema } from '@/schemas/userSchema';
 
 export async function loginAction(values: z.infer<typeof loginSchema>) {
   const validateFieds = loginSchema.safeParse(values);

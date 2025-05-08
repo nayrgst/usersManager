@@ -11,7 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { FormError } from '@/components/formError';
 import { FormSucess } from '@/components/formSucess';
-import { loginSchema } from '@/schemas/loginSchema';
+import { loginSchema } from '@/schemas/userSchema';
 import { CardWrapper } from '@/components/auth/cardWrapper';
 import {
   FormControl,
@@ -50,7 +50,7 @@ export function LoginForm() {
 
   return (
     <CardWrapper
-      backButtonHref="auth/register"
+      backButtonHref="/auth/register"
       backButtonLabel="Não tem uma conta ?"
       headerLabel="BEM-VINDO!"
       showSocialButtons
