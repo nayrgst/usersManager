@@ -86,7 +86,7 @@ npm run dev
 yarn dev
 ```
 
-Acesse a aplicação em [http://localhost:3000](http://localhost:3000) ou [vercel.com](https://vercel.com)
+Acesse a aplicação em [http://localhost:3000](http://localhost:3000) ou [user-manager.nayr.dev](https://user-manager.nayr.dev/)
 
 ## 🔑 Credenciais de Administrador
 
