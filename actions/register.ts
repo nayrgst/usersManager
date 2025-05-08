@@ -63,7 +63,6 @@ export async function register(data: RegisterInput) {
       cep,
       city,
       state,
-      role: 'user',
     },
   });
 

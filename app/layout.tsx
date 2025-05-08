@@ -1,8 +1,9 @@
+import './globals.css';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+
 import { ThemeProvider } from '@/components/theme-provider';
-import './globals.css';
-import ModeToggle from '@/components/toggleMode';
+import { Toaster } from '@/components/ui/sonner';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,11 +29,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <header className="border-b p-2 flex justify-end">
-            <ModeToggle />
-          </header>
           {children}
         </ThemeProvider>
+        <Toaster position="top-center" />
+        <footer className="border-t p-4 text-center">
+          <p className="text-sm">
+            © {new Date().getFullYear()} Gerenciamento de Usuários - Todos os direitos reservados
+          </p>
+        </footer>
       </body>
     </html>
   );

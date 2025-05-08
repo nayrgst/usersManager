@@ -48,17 +48,19 @@ export const RegisterForm = () => {
       register(values).then((data) => {
         setError(data.error);
         setSuccess(data.success);
-      });
-    });
 
-    form.reset({
-      name: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-      cep: '',
-      state: '',
-      city: '',
+        if (data.success) {
+          form.reset({
+            name: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+            cep: '',
+            state: '',
+            city: '',
+          });
+        }
+      });
     });
   }
 

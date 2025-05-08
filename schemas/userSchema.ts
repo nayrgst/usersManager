@@ -52,3 +52,8 @@ export const registerSchema = z
       });
     }
   });
+
+export const editUserSchema = z.object({
+  id: z.string(),
+  name: z.string().min(3, 'O nome deve ter no mínimo 3 caracteres'),
+});

@@ -21,11 +21,13 @@ import {
   FormMessage,
   Form,
 } from '@/components/ui/form';
+import { useRouter } from 'next/navigation';
 
 export function LoginForm() {
   const [error, setError] = useState<string | undefined>('');
   const [success, setSuccess] = useState<string | undefined>('');
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
@@ -42,8 +44,11 @@ export function LoginForm() {
 
     startTransition(() => {
       loginAction(values).then((data) => {
-        setError(data.error);
-        setSuccess(data.success);
+        setError(data?.error);
+        setSuccess(data?.success);
+        if (data?.success) {
+          router.push('/dashboard');
+        }
       });
     });
   }
@@ -53,7 +58,6 @@ export function LoginForm() {
       backButtonHref="/auth/register"
       backButtonLabel="Não tem uma conta ?"
       headerLabel="BEM-VINDO!"
-      showSocialButtons
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

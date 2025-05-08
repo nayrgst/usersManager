@@ -27,8 +27,10 @@ export async function loginAction(values: z.infer<typeof loginSchema>) {
     await signIn('credentials', {
       email,
       password,
-      redirectTo: DEFAULT_LOGIN_REDIRECT,
+      redirect: false,
     });
+
+    return { success: 'Login realizado com sucesso!', redirectTo: DEFAULT_LOGIN_REDIRECT };
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.name) {
@@ -41,6 +43,4 @@ export async function loginAction(values: z.infer<typeof loginSchema>) {
     }
     throw error;
   }
-
-  return { success: 'Entrando...' };
 }

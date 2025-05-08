@@ -1,37 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 👥 Sistema de Gerenciamento de Usuários
 
-## Getting Started
+Uma aplicação web completa para gerenciamento de usuários desenvolvida com Next.js e Prisma, focada em autenticação, autorização e níveis de acesso.
 
-First, run the development server:
+## 📋 Funcionalidades
+
+### 🔐 Autenticação e Usuários
+
+- **Cadastro público** com campos obrigatórios (nome, e-mail e senha) e opcionais (CEP, estado e cidade)
+- **Integração com ViaCEP** para preenchimento automático de estado e cidade a partir do CEP
+- **Login seguro** com autenticação via e-mail e senha
+- **Administrador inicial** com acesso preconfigurado
+
+### 👤 Área do Usuário
+
+- Visualização de dados próprios
+- Interface intuitiva e responsiva
+
+### 👑 Área Administrativa
+
+- Listagem completa de usuários
+- Edição de dados de qualquer usuário
+- Exclusão de usuários com confirmação
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Frontend**:
+
+  - Next.js com App Router
+  - TypeScript para tipagem estática
+  - Tailwind CSS e Shadcn para estilização
+  - React Hook Form com validação via Zod
+  - Lucide React para ícones
+
+- **Backend**:
+  - Prisma como ORM
+  - SQLite para banco de dados
+  - NextAuth.js para autenticação
+  - Bcrypt para hash de senhas
+
+## 📦 Requisitos
+
+- Node.js 18+
+- NPM ou Yarn
+
+## ⚙️ Instalação
+
+### 1. Clone o repositório
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-
+git clone git@github.com:nayrgst/usersManager.git
+cd users-manager/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Instale as dependências
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Com NPM
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Ou com Yarn
+yarn install
+```
 
-## Learn More
+### 3. Configure o banco de dados
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Crie o banco e aplique migrações
+npm run db:push
+# ou
+yarn db:push
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Crie o usuário administrador
+npm run db:seed
+# ou
+yarn db:seed
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Inicie o servidor de desenvolvimento
 
-## Deploy on Vercel
+```bash
+# Com NPM
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Ou com Yarn
+yarn dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Acesse a aplicação em [http://localhost:3000](http://localhost:3000) ou [vercel.com](https://vercel.com)
+
+## 🔑 Credenciais de Administrador
+
+- **Email**: admin@admin.com
+- **Senha**: admin@123
+
+## 🌟 Funcionalidades Adicionais
+
+- Design responsivo com Tailwind CSS
+- Sistema de toasts para feedback ao usuário
+- Confirmação de exclusão de usuários
+- Proteção de rotas por middleware
+- Validação de campos avançada
+- Gerenciamento de sessão de usuário
+
+---
+
+Desenvolvido por [nayrgst](https://github.com/nayrgst)
