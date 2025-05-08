@@ -4,15 +4,12 @@ import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardFooter } from '@/components/ui/card';
 import { BackButton } from '@/components/auth/backButton';
 import { Header } from '@/components/auth/header';
-import { SocialButtons } from '@/components/auth/socialButtons';
 
 interface CardWrapperProps {
   children: React.ReactNode;
   headerLabel: string;
   backButtonLabel?: string;
   backButtonHref: string;
-  showSocialButtons?: boolean;
-  showImageBg?: boolean;
   className?: string;
 }
 
@@ -21,7 +18,6 @@ export function CardWrapper({
   headerLabel,
   backButtonLabel,
   backButtonHref,
-  showSocialButtons,
   className,
 }: CardWrapperProps) {
   return (
@@ -32,12 +28,6 @@ export function CardWrapper({
         </CardHeader>
 
         <CardContent>{children}</CardContent>
-
-        {showSocialButtons && (
-          <CardFooter>
-            <SocialButtons />
-          </CardFooter>
-        )}
 
         {backButtonLabel && (
           <CardFooter className="mt-4">
