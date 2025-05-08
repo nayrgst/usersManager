@@ -1,10 +1,8 @@
-import { Suspense } from 'react';
 import { redirect } from 'next/navigation';
 
 import { auth } from '@/auth';
 import { UserTable } from '@/app/dashboard/_components/userTable';
 import { adminUser, getAllUsers } from '@/data/user';
-import { UserTableSkeleton } from '@/components/skeletons/userTableSkeleton';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default async function AdminPage() {
@@ -35,9 +33,7 @@ export default async function AdminPage() {
           <CardDescription>Lista de todos os usuários cadastrados</CardDescription>
         </CardHeader>
         <CardContent className="pt-6">
-          <Suspense fallback={<UserTableSkeleton />}>
-            <UserTable users={users} currentUserId={session.user.id} />
-          </Suspense>
+          <UserTable users={users} currentUserId={session.user.id} />
         </CardContent>
       </Card>
     </div>
