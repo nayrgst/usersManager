@@ -40,7 +40,7 @@ Uma aplicação web completa para gerenciamento de usuários desenvolvida com Ne
 
 ## 📦 Requisitos
 
-- Node.js 18+
+- Node.js 18
 - NPM ou Yarn
 
 ## ⚙️ Instalação
