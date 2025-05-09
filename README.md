@@ -49,7 +49,7 @@ Uma aplicação web completa para gerenciamento de usuários desenvolvida com Ne
 
 ```bash
 git clone git@github.com:nayrgst/usersManager.git
-cd users-manager/
+cd usersManager/
 ```
 
 ### 2. Instale as dependências
